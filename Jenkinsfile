@@ -4,6 +4,6 @@ node{
   }
   stage('Unit Tests'){
     def pythonPath=/Users/M Rizwan Ameen/AppData/Local/Programs/Python/Python39
-    sh "$pythonPath python test_main.py"
+    bat "$pythonPath python test_main.py"
   }
 }
