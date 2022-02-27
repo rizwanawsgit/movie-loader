@@ -3,7 +3,7 @@ node{
     checkout scm
   }
   stage('Unit Tests'){
-    def pythonPath=\Users\M Rizwan Ameen\AppData\Local\Programs\Python\Python39
-    bat "$pythonPath python test_main.py"
+    def pythonPath=/Users/M Rizwan Ameen/AppData/Local/Programs/Python/Python39
+    sh "$pythonPath python test_main.py"
   }
 }
