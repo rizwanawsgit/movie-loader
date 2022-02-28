@@ -1,9 +1,11 @@
+def ImageName = 'mlabouardy/movies-loader'
 node{
   stage('checkout'){
     checkout scm
   }
   stage('Unit Tests'){
-    def pythonPath=/Users/M Rizwan Ameen/AppData/Local/Programs/Python/Python39
-    bat "$pythonPath python test_main.py"
+    sh "docker build -t ${ImageName}-test -f Dockerfile.test ."
+    sh "docker run --rm ${ImageName}-test"
+    
   }
 }
