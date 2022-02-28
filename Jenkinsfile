@@ -3,8 +3,9 @@ node{
   stage('checkout'){
     checkout scm
   } 
-  stage('Unit Tests'){
-    bat "docker build -t ${imageName}-test -f Dockerfile.test ."
-    bat "docker container run -d -it ${imageName}-test"
-  }
+  stage('Unit Test'){
+	  def imageTest = docker build("${imageName}-test", "-f Dockerfile.test .")
+		imageTest.inside{
+		  sh 'python test_main.py'
+    }
 }
