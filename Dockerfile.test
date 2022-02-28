@@ -2,4 +2,5 @@ FROM python:3
 WORKDIR /app
 COPY test_main.py .
 COPY movies.json .
+CMD ["sleep", "300"]
 CMD python /app/test_main.py
