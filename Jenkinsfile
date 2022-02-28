@@ -4,7 +4,7 @@ node{
     checkout scm
   }
   stage('Unit Tests'){
-    sh "docker build -t ${imageName}-test -f Dockerfile.test ."
-    sh "docker run --rm ${imageName}-test"
+    bat "docker build -t ${imageName}-test -f Dockerfile.test ."
+    bat "docker run --rm ${imageName}-test"
   }
 }
