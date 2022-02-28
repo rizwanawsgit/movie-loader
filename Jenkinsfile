@@ -4,7 +4,7 @@ node{
     checkout scm
   } 
   stage('Unit Test'){
-    def customImage = docker.build("${imageName}-test", "-f Dockerfile.test .")
+    def customImage = docker.build("my-image:test", "-f Dockerfile.test .")
     customImage.inside{
       bat "python test_main.py"
 	}
