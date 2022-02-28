@@ -5,6 +5,5 @@ node{
   } 
   stage('Unit Tests'){
     bat "docker build -t ${imageName}-test -f Dockerfile.test ."
-    bat "docker run --rm ${imageName}-test"
   }
 }
