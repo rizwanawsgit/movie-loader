@@ -3,6 +3,7 @@ node{
 	  checkout scm
   } 
   stage('Unit Test'){
-	 bat 'python test_main.py'
+	sh "docker build -t ${imageName}-test -f Dockerfile.test ."
+	sh "docker run --rm ${imageName}-test"
     }
 }
