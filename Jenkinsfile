@@ -3,7 +3,7 @@ node{
 	  checkout scm
   } 
   stage('Unit Test'){
-	def path = "\jenkinshomedirectory\workspace\movie-loader_develop"
-	sh '$path python test_main.py'
+	 bat cd C:\jenkinshomedirectory\workspace\movie-loader_develop
+	 bat '$path python test_main.py'
     }
 }
