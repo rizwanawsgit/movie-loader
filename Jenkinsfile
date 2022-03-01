@@ -3,7 +3,7 @@ node{
 	  checkout scm
   } 
   stage('Unit Test'){
-	  docker build -t myimage -f Dockerfile.test .
-	  docker run --rm myimage python test_main.py
+	def path = "C:\jenkinshomedirectory\workspace\movie-loader_develop"
+	sh '$path python test_main.py'
     }
 }
