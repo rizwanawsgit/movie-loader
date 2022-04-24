@@ -9,7 +9,7 @@ pipeline{
  stage('Unit Tests'){
    steps{
      sudo docker.build("imagetest -f Dockerfile.test .")
-     imagetest.inside{
+     sudo imagetest.inside{
        sh 'python test_main.py'
    }
    }
