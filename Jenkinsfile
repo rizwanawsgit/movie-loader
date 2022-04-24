@@ -3,8 +3,7 @@ node{
     checkout scm
   }
   stage('Unit Tests'){
-    def imageName = 'mlabouardy/movies-loader'
-    def imageTest= docker.build("${imageName}-test", "-f Dockerfile.test .")
+    def imageTest= docker.build("pythonimage -f Dockerfile.test .")
     imageTest.inside{
       sh 'python test_main.py'
 }
