@@ -6,5 +6,4 @@ node	{
 		def Home=/var/lib/jenkins/workspace/python
 		sh '$Home python test_main.py'
 	}
-	
 }
