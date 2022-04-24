@@ -8,8 +8,8 @@ pipeline{
     }
  stage('Unit Tests'){
    steps{
-     sudo docker build -t imagetest -f Dockerfile.test .
-     sudo docker run imagetest
+     "sudo docker build -t imagetest -f Dockerfile.test ."
+     "sudo docker run imagetest"
    }
  }
   }
