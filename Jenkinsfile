@@ -8,9 +8,11 @@ pipeline{
   }
  stage('Unit Tests'){
    steps{
-     def imageTest= sudo docker.build("${imageName}-test","-f Dockerfile.test .")
-     imageTest.inside{
-       sh 'sudp python test_main.py'
+     scrept{
+       def imageTest= sudo docker.build("${imageName}-test","-f Dockerfile.test .")
+       imageTest.inside{
+         sh 'sudp python test_main.py'
+     }
    }
    }
  }
