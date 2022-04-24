@@ -3,8 +3,8 @@ node	{
 		checkout scm
 	}
 	stage('UnitTest'){
-		sh "sudo docker build -t py-unittest-img -f Dockerfile.test ."
-		sh "sudo docker container run pyUnitTestImg"
+		sudo docker build -t py-unittest-img -f Dockerfile.test .
+		sudo docker container run py-unittest-img
 	}
 	
 }
