@@ -3,10 +3,8 @@ node	{
 		checkout scm
 	}
 	stage('UnitTest'){
-		"sudo docker.build("py-unittest-img -f Dockerfile.test .")"
-		 py-unittest-img.inside{
-			"python test_main.py"
-		}
+		def Home=/var/lib/jenkins/workspace/python
+		sh '$Home python test_main.py'		}
 	}
 	
 }
