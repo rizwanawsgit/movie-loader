@@ -1,5 +1,7 @@
-node{
-  stage('Checkout'){
+pipeline{
+  agent any
+  stages{
+    stage('checkout'){
     checkout scm
   }
  stage('Unit Tests'){
@@ -8,4 +10,5 @@ node{
      sh 'sudp python test_main.py'
    }
  }
+  }
 }
